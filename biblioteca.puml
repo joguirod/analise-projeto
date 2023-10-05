@@ -1,0 +1,55 @@
+@startuml Biblioteca
+
+enum "<<<tipoPublicacao>>>\ntipoPublicacao" {
+    livro
+    revista
+    jornal
+}
+
+class Empresa {
+}
+
+class Biblioteca {
+    + funcionarios: funcionario[]
+}
+
+class Reserva {
+    + data: date
+}
+
+class Emprestimo {
+    + dataInicio: date
+    + dataDevolucao: date
+}
+
+class Exemplar{
+    + publicacao: Publicacao
+    + quantidade: int
+}
+
+class Funcionario {
+    + nome: string
+    - matricula: string
+    - email: string
+    - telefone: string
+    --
+    reservar()
+    emprestar()
+    excluirReserva()
+}
+
+class Publicacao {
+    + tipoPublicacao: tipoPublicacao
+    + nomePublicacao: string
+}
+
+Empresa "1" o-- "0..*" Biblioteca : pertence
+Biblioteca "1" *-- "1..*" Funcionario: pertence
+Funcionario "0..*" o-- "1" Emprestimo: realiza
+Funcionario "0..*" o-- "1" Reserva: realiza
+Reserva "1..*" -- "1" Exemplar: possui
+Emprestimo "1..*" -- "1" Exemplar: possui
+
+Exemplar <|-- Publicacao
+
+@enduml
