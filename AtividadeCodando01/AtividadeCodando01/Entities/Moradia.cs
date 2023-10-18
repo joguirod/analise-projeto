@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AtividadeCodando01.Entities
+﻿namespace AtividadeCodando01.Entities
 {
-    internal class Moradia
+    class Moradia
     {
+        public double Area { get; set; }
+        public Endereco Endereco { get; set; }
+
+        public Moradia(double area, Endereco endereco)
+        {
+            Area = area;
+            Endereco = endereco;
+        }
     }
 }

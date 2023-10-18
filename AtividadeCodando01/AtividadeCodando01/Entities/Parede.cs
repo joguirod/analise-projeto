@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AtividadeCodando01.Entities
 {
-    internal class Parede
+    class Parede
     {
+        public double Altura { get; set; }
+        public double Largura { get; set; }
+        public Acabamento Acabamento{ get; set; }
     }
 }
