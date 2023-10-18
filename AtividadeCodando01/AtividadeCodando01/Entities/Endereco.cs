@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AtividadeCodando01.Entities
+﻿namespace AtividadeCodando01.Entities
 {
-    internal class Endereco
+    class Endereco
     {
+        public string Logradouro { get; set; }
+        public string Cep { get; set; }
+        public string Numero { get; set; }
+
+        public Endereco(string logradouro, string cep, string numero)
+        {
+            Logradouro = logradouro;
+            Cep = cep;
+            Numero = numero;
+        }
     }
 }
